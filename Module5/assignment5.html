@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Function 1: Reverse</h2>
+
+<p>Enter a word and click the button to reverse it.</p>
+
+<input id="word" type="text">
+<button onclick="reverseString()">reverse</button>
+
+<div id="output1"></div>
+
+<script>
+function reverseString() {
+  var str = document.getElementById("word").value;
+  var rev_str = str.split("").reverse().join("");
+  document.getElementById("output1").innerHTML = rev_str;
+}
+</script>
+
+
+<h2>Function 2: Multiplication Table</h2>
+
+<p>Enter a number and click the button to multiply it.</p>
+
+<input id="num" type="number">
+<button onclick="multiplyNumber()">multiply</button>
+
+<div id="output2"></div>
+
+<script>
+function multiplyNumber() {
+  var outputHTML = "";
+  var n = parseInt(document.getElementById("num").value);
+  var k = 0;
+
+  outputHTML += "<table>";
+  for(var i = 0; i < 5; i++) {
+    outputHTML += "<tr>";
+    k = 4 * i + 1;
+    for(var j = 0; j < 4; j++) {
+      outputHTML += "<td>" + k*n + "</td>";
+      k++;
+    }
+    outputHTML += "</tr>";
+  }
+  outputHTML += "</table>";
+  document.getElementById("output2").innerHTML = outputHTML;
+}
+</script>
+
+</body>
+</html>
